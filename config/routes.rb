@@ -3,4 +3,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get "/all" => "products#all"
+  get "/first" => "products#first"
+  get "/product1" => "products#product1"
+  get "/product2" => "products#product2"
+
 end
