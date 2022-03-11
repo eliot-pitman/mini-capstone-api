@@ -16,6 +16,6 @@
 # product4 = Product.new(name: "head phones",price: 2,image_url:"img3",description:"head phoniest headphones")
 # product4.save 
 
-product5 = Product.new(name: "head phones",price: 2,image_url:"img3",description:"head phoniest headphones",review:"could be better")
-product5.save 
+# product5 = Product.new(name: "head phones",price: 2,image_url:"img3",description:"head phoniest headphones",review:"could be better")
+# product5.save 
 

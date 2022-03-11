@@ -1,0 +1,21 @@
+PATCH http://localhost:3000/product/3 
+Content-Type: application/json
+
+{
+    "description":"its the fastest again!"
+}
+
+###
+
+PATCH http://localhost:3000/product/6 
+Content-Type: application/json
+
+{
+    "price":"120"
+}
+
+###
+
+DELETE http://localhost:3000/product/6 
+Content-Type: application/json
+
