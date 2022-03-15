@@ -1,18 +1,18 @@
 class ProductsController < ApplicationController
   def index
     all_products = Product.all
-    render json: all_products.as_json
+    render :show
   end
 
   def first
     first = Product.first
-    render json: first.as_json  
+    render json: first.as_json(methods: [:is_discounted?])
   end
 
   def show
     product_id = params[:id]
-    product = Product.find(product_id)
-    render json: product.as_json
+    @product = Product.find(product_id)
+    render :show
   end
 
   def create
@@ -47,6 +47,7 @@ class ProductsController < ApplicationController
     render json: {message: "deleted"}
   end
   
+
   # def show_product
   #   input = params["product"].strip.downcase
   #   product_result = Product.find_by(name:"#{input}")

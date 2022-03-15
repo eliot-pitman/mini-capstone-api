@@ -1,3 +1,4 @@
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -18,4 +19,11 @@
 
 # product5 = Product.new(name: "head phones",price: 2,image_url:"img3",description:"head phoniest headphones",review:"could be better")
 # product5.save 
+
+# 100.times do
+#   product_name = FFaker::Product.product_name
+#   product_price = FFaker::Number.number
+#   product_description = FFaker::AWS.product_description
+#   Product.create(name: product_name, price: product_price, description: product_description)
+# end
 
