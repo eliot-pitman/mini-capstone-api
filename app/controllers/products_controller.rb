@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def index
-    all_products = Product.all
-    render :show
+    @products = Product.all
+    render :index
   end
 
   def first
@@ -22,21 +22,28 @@ class ProductsController < ApplicationController
       image_url: params["image_url"],
       description: params["description"])
       
-    product.save
-    render json: product.as_json
+    if product.save
+      render :show
+    else
+      render json: {errors: product.errors.full_message}
+    end
   end
 
   def update
     product_id = params[:id]
-    product = Product.find(product_id)
+    @product = Product.find(product_id)
 
-    product.name = params["name"] || product.name
-    product.price = params["price"] || product.price
-    product.image_url = params["image_url"] || product.image_url
-    product.description = params["description"] || product.description
+    @product.name = params["name"] || @product.name
+    @product.price = params["price"] || @product.price
+    @product.image_url = params["image_url"] || @product.image_url
+    @product.description = params["description"] || @product.description
+    if @product.save
+      render json: @product.as_json
+    else 
+      render json: {errors: @product.errors.full_message}
+    end
 
-    product.save
-    render json: product.as_json
+
   end
 
   def destroy

@@ -27,3 +27,4 @@
 #   Product.create(name: product_name, price: product_price, description: product_description)
 # end
 
+Product.new(name:nil)

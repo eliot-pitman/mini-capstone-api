@@ -7,14 +7,24 @@ Content-Type: application/json
 
 ###
 
-PATCH http://localhost:3000/product/6 
+PATCH http://localhost:3000/products/104
 Content-Type: application/json
 
 {
-    "price":"120"
+    "price":"110"
 }
 
 ###
 
 DELETE http://localhost:3000/product/4
+
+### create
+
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "price":140,
+    "description":"hello"
+}
 

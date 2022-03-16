@@ -1,12 +1,13 @@
 @products.map do |product|
   {
-    id: @product.id,
+    id: product.id,
     name: product.name,
     price: product.price,
     description: product.description,
     created_at: product.created_at,
     updated_at: product.updated_at,
     is_discounted?: product.is_discounted?,
-    tax: product.tax,
+    tax: product.tax
+  }
 
 end
