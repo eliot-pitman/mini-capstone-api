@@ -4,10 +4,12 @@
     name: product.name,
     price: product.price,
     description: product.description,
+    supplier_id: product.supplier_id,
     created_at: product.created_at,
     updated_at: product.updated_at,
     is_discounted?: product.is_discounted?,
     tax: product.tax,
+    supplier: product.supplier,
     total: product.total
   }
 end

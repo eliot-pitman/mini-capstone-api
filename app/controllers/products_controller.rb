@@ -1,11 +1,11 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
-    render template: "products/index"
+    render :index
   end
 
   def show
-    @product = Product.find_by(id: params[:id])
+    @product = Product.find_by(id: params[:id]) || @product = Product.find_by(supplier_id: params[:id])
     render template: "products/show"
   end
 
@@ -14,7 +14,8 @@ class ProductsController < ApplicationController
       name: params["name"],
       price: params["price"],
       image_url: params["image_url"],
-      description: params["description"])
+      description: params["description"],
+      supplier_id: params["supplier_id"])
       
     if @product.save
       render :show
@@ -31,6 +32,7 @@ class ProductsController < ApplicationController
     @product.price = params["price"] || @product.price
     @product.image_url = params["image_url"] || @product.image_url
     @product.description = params["description"] || @product.description
+    @product.supplier_id = params["supplier_id"] || @product.supplier_id
     if @product.save
       render json: @product.as_json
     else 

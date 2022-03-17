@@ -27,4 +27,7 @@
 #   Product.create(name: product_name, price: product_price, description: product_description)
 # end
 
-Product.new(name:nil)
+# Supplier.create(name:"amazon",email:"amazon@example.com",phone_number:"2222222222")
+# Supplier.create(name:"walmart",email:"walmart@example.com",phone_number:"3333333333")
+# Supplier.create(name:"mugs usa",email:"muggy@example.com",phone_number:"3333333333")
+
