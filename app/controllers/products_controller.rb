@@ -1,31 +1,25 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
-    render :index
-  end
-
-  def first
-    first = Product.first
-    render json: first.as_json(methods: [:is_discounted?])
+    render template: "products/index"
   end
 
   def show
-    product_id = params[:id]
-    @product = Product.find(product_id)
-    render :show
+    @product = Product.find_by(id: params[:id])
+    render template: "products/show"
   end
 
   def create
-    product = Product.new(
+    @product = Product.new(
       name: params["name"],
       price: params["price"],
       image_url: params["image_url"],
       description: params["description"])
       
-    if product.save
+    if @product.save
       render :show
     else
-      render json: {errors: product.errors.full_message}
+      render json: {errors: @product.errors.full_message}, status: 422
     end
   end
 

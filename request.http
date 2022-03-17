@@ -20,10 +20,11 @@ DELETE http://localhost:3000/product/4
 
 ### create
 
-POST http://localhost:3000/products
+POST http://localhost:3000/products.json
 Content-Type: application/json
 
 {
+    "name":"goo",
     "price":140,
     "description":"hello"
 }

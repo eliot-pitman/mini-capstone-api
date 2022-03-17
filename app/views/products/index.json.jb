@@ -7,7 +7,7 @@
     created_at: product.created_at,
     updated_at: product.updated_at,
     is_discounted?: product.is_discounted?,
-    tax: product.tax
+    tax: product.tax,
+    total: product.total
   }
-
 end
