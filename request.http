@@ -26,6 +26,7 @@ Content-Type: application/json
 {
     "name":"goo",
     "price":140,
-    "description":"hello"
+    "description":"hello",
+    "supplier_id:":"1"
 }
 
