@@ -48,3 +48,4 @@ end
 gem "ffaker"
 gem "jb"
 gem "bcrypt"
+gem 'jwt'

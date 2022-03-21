@@ -1,0 +1,10 @@
+{
+  id: @orders.id,
+  user_id: @orders.user_id,
+  quantity: @orders.quantity,
+  subtotal: @orders.subtotal,
+  tax: @orders.tax,
+  total: @orders.total,
+  created_at: @orders.created_at,
+  updated_at: @orders.updated_at
+}

@@ -20,13 +20,39 @@ DELETE http://localhost:3000/product/4
 
 ### create
 
-POST http://localhost:3000/products.json
+POST http://localhost:3000/orders.json
 Content-Type: application/json
 
 {
-    "name":"goo",
-    "price":140,
-    "description":"hello",
-    "supplier_id:":"1"
+    "user_id":"1",
+    "product_id":"12",
+    "quantity":"2",
+    "supplier_id":"1"
 }
 
+### Users create (signup)
+POST http://localhost:3000/users.json
+Content-Type: application/json
+
+{
+  "name": "anna",
+  "email": "anna@example.com",
+  "password": "Password1-",
+  "password_confirmation": "Password1-"
+}
+
+
+### Sessions create (login)
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{
+  "email": "jasper1@example.com",
+  "password": "Password"
+}
+
+
+### request with jwt
+GET http://localhost:3000/products.json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NDc5NzE5Nzd9.py4yDxIbTPNsshGF36tO5muh42iFpOi5j2sDI3GBvEM
+Content-Type: application/json
