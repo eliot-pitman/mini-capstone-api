@@ -1,3 +1,6 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NDgwNjI3NzF9.TlZCgnltRpDKSJn7AgmZhOAzyP5sYUzA1lfVmrAqQ0k
+
+
 PATCH http://localhost:3000/product/3 
 Content-Type: application/json
 
@@ -8,6 +11,7 @@ Content-Type: application/json
 ###
 
 PATCH http://localhost:3000/products/104
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NDgwNjA5Mzh9.PpbzvhsU44CRTVlN_qaMYn5UwDcCbhUDu9JeXOV4Uxg
 Content-Type: application/json
 
 {
@@ -21,13 +25,12 @@ DELETE http://localhost:3000/product/4
 ### create
 
 POST http://localhost:3000/orders.json
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-    "user_id":"1",
-    "product_id":"12",
-    "quantity":"2",
-    "supplier_id":"1"
+    "product_id":12,
+    "quantity":4
 }
 
 ### Users create (signup)
@@ -53,6 +56,6 @@ Content-Type: application/json
 
 
 ### request with jwt
-GET http://localhost:3000/products.json
-# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NDc5NzE5Nzd9.py4yDxIbTPNsshGF36tO5muh42iFpOi5j2sDI3GBvEM
+GET http://localhost:3000/orders.json
+Authorization: Bearer yJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NDgwNjE4MTl9.BqaqLO_UMr6QYj6LDn-Pz_CdHFdj0PNpRd6x8zyQWz4
 Content-Type: application/json

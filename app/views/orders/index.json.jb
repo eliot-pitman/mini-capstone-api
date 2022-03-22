@@ -1,12 +1,12 @@
 @orders.map do |order|
   {
     id: order.id,
-    user_id: order.user_id,
+    # user_id: order.user_id,
     quantity: order.quantity,
     subtotal: order.subtotal,
     tax: order.tax,
-    total: order.total
-
+    total: order.total,
+    product_id: order.product_id
     # url: order_url(order, format: :json)
   }
 end

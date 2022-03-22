@@ -3,7 +3,7 @@ class Product < ApplicationRecord
   validates :name, presence: true
   validates :supplier_id, presence: true
 
-  belongs_to :order
+  has_many :orders
  
   has_many :images
   # def images
