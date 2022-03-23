@@ -1,37 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NDgwNjI3NzF9.TlZCgnltRpDKSJn7AgmZhOAzyP5sYUzA1lfVmrAqQ0k
-
-
-PATCH http://localhost:3000/product/3 
-Content-Type: application/json
-
-{
-    "description":"its the fastest again!"
-}
-
-###
-
-PATCH http://localhost:3000/products/104
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NDgwNjA5Mzh9.PpbzvhsU44CRTVlN_qaMYn5UwDcCbhUDu9JeXOV4Uxg
-Content-Type: application/json
-
-{
-    "price":"110"
-}
-
-###
-
-DELETE http://localhost:3000/product/4
-
-### create
-
-POST http://localhost:3000/orders.json
-Authorization: Bearer {{jwt}}
-Content-Type: application/json
-
-{
-    "product_id":12,
-    "quantity":4
-}
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NDgxMDE5MTJ9.sSjbXjYulCgc03a3fTIJ9UWIsKYERX7uoCYer8_TK10
 
 ### Users create (signup)
 POST http://localhost:3000/users.json
@@ -44,7 +11,6 @@ Content-Type: application/json
   "password_confirmation": "Password1-"
 }
 
-
 ### Sessions create (login)
 POST http://localhost:3000/sessions.json
 Content-Type: application/json
@@ -54,8 +20,38 @@ Content-Type: application/json
   "password": "Password"
 }
 
-
-### request with jwt
+### view orders
 GET http://localhost:3000/orders.json
-Authorization: Bearer yJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NDgwNjE4MTl9.BqaqLO_UMr6QYj6LDn-Pz_CdHFdj0PNpRd6x8zyQWz4
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
+
+### all products
+GET http://localhost:3000/products.json
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+### update products
+PATCH http://localhost:3000/products/103.json
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+  "price":130
+}
+
+### delete products
+DELETE http://localhost:3000/products/103
+Authorization: Bearer {{jwt}}
+
+### create products
+POST http://localhost:3000/products.json
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+    "name":"pens",
+    "price":12,
+    "description":"is niice",
+    "supplier_id":2
+}
+
