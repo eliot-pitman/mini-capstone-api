@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NDgxMDE5MTJ9.sSjbXjYulCgc03a3fTIJ9UWIsKYERX7uoCYer8_TK10
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE2NDgxMDcyMjR9.GJHNMSCNEvMUrr9qMoqwxe-f3FV7xJ2N1QvfRAWOjIc
 
 ### Users create (signup)
 POST http://localhost:3000/users.json
@@ -7,8 +7,8 @@ Content-Type: application/json
 {
   "name": "anna",
   "email": "anna@example.com",
-  "password": "Password1-",
-  "password_confirmation": "Password1-"
+  "password": "Password",
+  "password_confirmation": "Password"
 }
 
 ### Sessions create (login)
@@ -16,7 +16,7 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "jasper1@example.com",
+  "email": "anna@example.com",
   "password": "Password"
 }
 
@@ -54,4 +54,24 @@ Content-Type: application/json
     "description":"is niice",
     "supplier_id":2
 }
+
+### create order
+POST http://localhost:3000/orders.json
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+    "product_id":103,
+    "quantity":6
+}
+
+### view current user orders
+GET http://localhost:3000/orders.json
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+### view a specific order
+GET http://localhost:3000/orders/29.json
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
 

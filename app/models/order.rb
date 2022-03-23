@@ -2,16 +2,16 @@ class Order < ApplicationRecord
   belongs_to :user
   belongs_to :product
 
-  # def subtotal
-  #   (quantity * price).round(2)
+  # def calculated_subtotal
+  #   product.price * params[:quantity]
+  # end
+
+  # def calculated_tax
+  #   (calculated_subtotal * 0.09).round(2)
   # end
   
-  # def tax
-  #   (price.to_i * 0.09).round(2)
+  # def calculated_total
+  #   calculated_tax + calculated_subtotal
   # end
-
-  # def total
-  #   (subtotal.to_i + tax).round(2)
-  # end
-
+  
 end
