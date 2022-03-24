@@ -31,3 +31,17 @@
 # Supplier.create(name:"walmart",email:"walmart@example.com",phone_number:"3333333333")
 # Supplier.create(name:"mugs usa",email:"muggy@example.com",phone_number:"3333333333")
 
+
+# Image.create(
+#   url: "image_12",
+#   product_id: 1
+# )
+
+
+# Category.create(name:"tech")
+# Category.create(name:"silverware")
+# Category.create(name:"entertainment centers")
+
+# CategoryProduct.create(product_id: 3, category_id: 2)
+# CategoryProduct.create(product_id: 3, category_id: 1)
+

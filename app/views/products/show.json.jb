@@ -11,4 +11,5 @@
   tax: @product.tax,
   total: @product.total,
   supplier: @product.supplier
+  categories: @products.categories
 }

@@ -4,5 +4,5 @@
   subtotal: @orders.subtotal,
   tax: @orders.tax,
   total: @orders.total,
-  product_id: @orders.product_id
+  product: @orders.product
 }

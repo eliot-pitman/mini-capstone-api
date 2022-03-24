@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE2NDgxMDcyMjR9.GJHNMSCNEvMUrr9qMoqwxe-f3FV7xJ2N1QvfRAWOjIc
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE2NDgyMzE5MTh9.NeKaXjAJ-F3QQYdt90DS1GHWm5O-ykxmnkIJHLr5nK4
 
 ### Users create (signup)
 POST http://localhost:3000/users.json
@@ -26,7 +26,7 @@ Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 ### all products
-GET http://localhost:3000/products.json
+GET http://localhost:3000/products.json?category=houseware
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
