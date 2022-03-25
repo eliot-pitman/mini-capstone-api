@@ -45,3 +45,8 @@
 # CategoryProduct.create(product_id: 3, category_id: 2)
 # CategoryProduct.create(product_id: 3, category_id: 1)
 
+
+# 20.times do
+  
+#   CartedProduct.new(user_id:([*1..10].sample), product_id:([*1..10].sample),status: )
+# end

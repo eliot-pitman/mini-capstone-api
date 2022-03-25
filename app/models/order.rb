@@ -2,6 +2,10 @@ class Order < ApplicationRecord
   belongs_to :user
   belongs_to :product
 
+  belongs_to :user
+
+  has_many :carted_products
+
   # def calculated_subtotal
   #   product.price * params[:quantity]
   # end
