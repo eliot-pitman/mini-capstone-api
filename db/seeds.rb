@@ -46,7 +46,7 @@
 # CategoryProduct.create(product_id: 3, category_id: 1)
 
 
+
 # 20.times do
-  
-#   CartedProduct.new(user_id:([*1..10].sample), product_id:([*1..10].sample),status: )
+#   CartedProduct.create(user_id:([*1..10].sample), product_id:([*1..10].sample),status: "in-cart", quantity:([*1..10].sample), order_id: ([*1..4].sample))
 # end
