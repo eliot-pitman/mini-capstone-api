@@ -1,12 +1,13 @@
 class Product < ApplicationRecord
   
-  validates :name, presence: true
-  validates :supplier_id, presence: true
+  # validates :name, presence: true
+  # validates :supplier_id, presence: true
 
   belongs_to :supplier
-
-  has_many :orders
   has_many :images
+
+  has_many :carted_products
+  has_many :orders, through: :carted_products
   
   has_many :category_products
   has_many :categories, through: :category_products
