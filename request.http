@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE2NDgyMzE5MTh9.NeKaXjAJ-F3QQYdt90DS1GHWm5O-ykxmnkIJHLr5nK4
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE2NDg1NzIwMTl9.kMrw5mEwi2QSSHWqbK4w77Uj04zHX6nCbBRtfsK5oAc
 
 ### Users create (signup)
 POST http://localhost:3000/users.json
@@ -72,6 +72,21 @@ Content-Type: application/json
 
 ### view a specific order
 GET http://localhost:3000/orders/29.json
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+### put item in cart
+POST http://localhost:3000/cart
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+  "product_id":2,
+  "quantity":2
+}
+
+### all carted products of current user
+GET http://localhost:3000/cart
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 

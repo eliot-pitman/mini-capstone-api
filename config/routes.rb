@@ -34,6 +34,10 @@ Rails.application.routes.draw do
   post "/sessions" => "sessions#create" #LOGGING IN
 
 
+  post "/cart" => "carted_products#create" #add products to cart
+  get "/cart" => "carted_products#index" #all carted items of current user
+
+
   
 
 
