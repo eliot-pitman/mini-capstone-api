@@ -91,5 +91,6 @@ Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 ### delete product from cart
-DELETE http://localhost:3000/cart/33.json
+DELETE http://localhost:3000/cart/35
 Authorization: Bearer {{jwt}}
+Content-Type: application/json
