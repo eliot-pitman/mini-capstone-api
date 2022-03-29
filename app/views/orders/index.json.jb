@@ -1,10 +1,9 @@
 @orders.map do |order|
   {
     id: order.id,
-    quantity: order.quantity,
+    user_id: order.user_id,
     subtotal: order.subtotal,
     tax: order.tax,
-    total: order.total,
-    product: order.product
+    total: order.total
   }
 end

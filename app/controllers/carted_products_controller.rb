@@ -2,20 +2,26 @@ class CartedProductsController < ApplicationController
   before_action :authenticate_user
   
   def create
-    carted_product = CartedProduct.new(
-      user_id: current_user.id, 
+    @carted_product = CartedProduct.new(
+      user_id: current_user.id,
       product_id: params[:product_id],
-      status: params[:status] || "Carted",
-      quantity: params[:quantity], 
-      order_id: params[:order_id]
+      quantity: params[:quantity],
+      status:"carted"
     )
-    carted_product.save
-    render json: carted_order.as_json
+    @carted_product.save
+    render template: "carted_products/show"
   end
+
   def index
-
-
-    cart = current_user.carted_products.where(status: "carted")
-    render json: cart.as_json
+    @carted_products = current_user.carted_products.where(status: "carted")
+    render template: "carted_products/index"
   end
+
+  def destroy
+    carted_product = current_user.carted_products.find(params[:id], status: "carted")
+    carted_product.status = "removed"
+    carted_product.save
+    render json: {status: "Carted product successfully removed!"}
+  end
+
 end

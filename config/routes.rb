@@ -36,6 +36,7 @@ Rails.application.routes.draw do
 
   post "/cart" => "carted_products#create" #add products to cart
   get "/cart" => "carted_products#index" #all carted items of current user
+  delete "/cart/:id" => "carted_products#destroy" #delete product from cart
 
 
   
